@@ -10,9 +10,9 @@ import (
 )
 
 func main() {
-	pwsFlag := flag.String("common-pws", "", "common passwords")
-	maxCharFlag := flag.Int("max-char", 128, "maximum number characters allowed")
-	asciiOnly := flag.Bool("ascii-only", false, "only allows ascii compliant passwords")
+	pwsFlag := flag.String("common-pws", "", "common passwords dictionary path")
+	maxCharFlag := flag.Int("max-char", 128, "maximum numbe of characters allowed")
+	asciiOnly := flag.Bool("ascii-only", true, "only allows ascii compliant passwords")
 	flag.Parse()
 
 	if *pwsFlag == "" {
@@ -25,7 +25,7 @@ func main() {
 		*maxCharFlag = 64
 	}
 
-	// open common passwords file from flag path
+	// open common passwords file from user supplied path
 	file, err := os.Open(*pwsFlag)
 	if err != nil {
 		log.Fatal(err)

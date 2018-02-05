@@ -1,3 +1,5 @@
 .idea/
 *.txt
 nist-2017-validator
+vendor/
+ci/secrets.yaml

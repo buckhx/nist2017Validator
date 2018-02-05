@@ -29,12 +29,14 @@ go build -o nist-2017-validator
 ```
 
 ### How To Run
-After following the above build steps you can easily run your validator by executing the following command
+After following the above build steps you can easily run your validator by executing the following command(s):
 ```bash
 export PWS=path/to/passwords.txt
 export COMMON_PWS=path/to/common/passwords.txt
 cat $PWS | ./nist-2017-validator --common-pws=$COMMON_PWS
 ```
+The program accepts passwords to validate from STDIN with a newline delimited format. A common password dictionary can
+be loaded as any newline delimited file.
 You can also use optional build flags listed below to customize your validation parameters within NIST's guidelines.
 #### Runtime Flags
 A number of build flags can be used to help customize password validation parameters.
@@ -43,7 +45,7 @@ A number of build flags can be used to help customize password validation parame
 |:--:|:-------:|:---:|:-----:|
 |common-pws|Yes|Path of file containing commonly used passwords to be checked against.|"""|
 |max-char|No|Maximum number of characters to allow in a user supplied password. Cannot be less then 64|128|
-|ascii-only|No|Allows to validate with all unicode compliant passwords.|true|
+|ascii-only|No|Toggles ASCII only characters vs all unicode characters allowed for password validation. |true|
 
 Example
 ```bash
