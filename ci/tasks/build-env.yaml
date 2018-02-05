@@ -1,0 +1,10 @@
+platform: linux
+
+inputs:
+  - name: nist-source
+
+outputs:
+  - name: build-env
+
+run:
+  path: ./nist-source/ci/scripts/build-env.sh
