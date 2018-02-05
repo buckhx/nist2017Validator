@@ -1,4 +1,5 @@
 ## NIST 2017 Password Compliance Validator
+[![aminasian.coffee](https://concourse.aminasian.coffee/api/v1/teams/main/pipelines/nistValidator2017/jobs/test-source/badge)](https://concourse.aminasian.coffee/?groups=nistValidator2017)
 ### Project Overview
 This project is a password validation tool that implements the National Institute of Standards and Technology's 
 June 2017 guidelines on user supplied password security. It completely rewrites previously held policy by removing

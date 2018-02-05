@@ -3,7 +3,6 @@ resources:
     type: git
     source:
       uri: ((git.uri))
-      branch: AMinasian/CI
       username: ((git.username))
       password: ((git.password))
 
