@@ -16,6 +16,9 @@ ls $GOPATH/bin
 
 mkdir -p src/github.com/aminasian/
 cp -R ./nist-source src/github.com/aminasian/.
+cd src/github.com/aminasian/nist-source
+
+ls
 
 $GOPATH/bin/dep ensure
 
