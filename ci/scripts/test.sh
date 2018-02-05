@@ -4,6 +4,9 @@ set -e -x
 
 export GOPATH=$PWD
 
+ls
+mkdir -p bin
+
 apk add --no-cache git mercurial curl \
  &&  apk add --no-cache bash gawk sed grep bc coreutils openssl \
  && curl -L -s https://github.com/golang/dep/releases/download/v0.4.1/dep-linux-amd64 -o $GOPATH/bin/dep \
