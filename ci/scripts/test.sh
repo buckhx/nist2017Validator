@@ -4,7 +4,7 @@ set -e -x
 
 export GOPATH=$PWD
 
-mkdir -p bin/
+sudo apt-get install unzip
 
 curl -fsSL -o /tmp/dep.zip \
 https://github.com/golang/dep/releases/download/v0.3.0/dep-linux-amd64.zip \
