@@ -6,29 +6,11 @@ resources:
       branch: AMinasian/CI
       username: ((git.username))
       password: ((git.password))
-  - name: env-image
-    type: docker-image
-    source:
-      repository: ((docker.repo))
-      tag: ((docker.tag))
-      username: ((docker.username))
-      password: ((docker.password))
 
 jobs:
-  - name: build-env
-    plan:
-      - get: nist-source
-        trigger: true
-      - task: build
-        file: nist-source/ci/tasks/build-env.yaml
-      - put: env-image
-        params:
-          build: build-env
   - name: test-source
     plan:
       - get: nist-source
         trigger: true
-        passed: [build-env]
       - task: test
-        image: env-image
         file: nist-source/ci/tasks/test.yaml
