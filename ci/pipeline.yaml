@@ -1,0 +1,16 @@
+resources:
+  - name: nist-source
+    type: git
+    source:
+      uri: ((git.uri))
+      branch: AMinasian/CI
+      username: ((git.username))
+      password: ((git.password))
+
+jobs:
+  - name: test-source
+    plan:
+      - get: nist-source
+        trigger: true
+      - task: test
+        file: nist-source/ci/tasks/test.yaml
